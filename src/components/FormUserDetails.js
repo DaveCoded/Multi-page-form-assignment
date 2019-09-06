@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextInputGroup from './TextInputGroup';
 
 export class FormUserDetails extends Component {
   constructor(props) {
@@ -19,7 +20,6 @@ export class FormUserDetails extends Component {
 
     // Regex for valid email address
     const validEmailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+.)+[^<>()[\].,;:\s@"]{2,})$/i;
-
     // Separate password checks for separate error messages
     const lowercaseCheck = /^(?=.*[a-z])/;
     const uppercaseCheck = /^(?=.*[A-Z])/;
@@ -54,6 +54,7 @@ export class FormUserDetails extends Component {
     return formIsValid;
   };
 
+  // Proceed to next form page
   continue = e => {
     e.preventDefault();
     if (this.validate()) {
@@ -67,46 +68,38 @@ export class FormUserDetails extends Component {
 
     return (
       <form onSubmit={this.continue}>
-        <div>
-          <label htmlFor='name'>Name</label>
-          <input
-            type='text'
-            name='name'
-            onChange={handleChange('userName')}
-            defaultValue={values.userName}
-          />
-          <div>{errors.userName}</div>
-        </div>
-        <div>
-          <label htmlFor='role'>Role</label>
-          <input
-            type='text'
-            name='role'
-            onChange={handleChange('userRole')}
-            defaultValue={values.userRole}
-          />
-        </div>
-        <div>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            name='email'
-            onChange={handleChange('userEmail')}
-            defaultValue={values.userEmail}
-          />
-          <div>{errors.userEmail}</div>
-        </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            onChange={handleChange('userPassword')}
-            defaultValue={values.userPassword}
-          />
-          <div>{errors.userPassword}</div>
-        </div>
-        <button type='submit'>Submit</button>
+        <TextInputGroup
+          type='text'
+          name='userName'
+          label='name'
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        />
+        <TextInputGroup
+          type='text'
+          name='userRole'
+          label='role'
+          handleChange={handleChange}
+          values={values}
+        />
+        <TextInputGroup
+          type='email'
+          name='userEmail'
+          label='email'
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        />
+        <TextInputGroup
+          type='password'
+          name='userPassword'
+          label='password'
+          handleChange={handleChange}
+          values={values}
+          errors={errors}
+        />
+        <button type='submit'>Next</button>
       </form>
     );
   }

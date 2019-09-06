@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import StepProgressBar from './StepProgressBar';
 import FormUserDetails from './FormUserDetails';
 import FormPrivacyDetails from './FormPrivacyDetails';
 import FormDone from './FormDone';
@@ -93,7 +95,7 @@ export class UserForm extends Component {
     }
     return (
       <>
-        <h1>Step {step}</h1>
+        <StepProgressBar step={step} />
         {formJsx}
       </>
     );

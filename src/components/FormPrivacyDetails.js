@@ -1,51 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
+import CheckboxGroup from './CheckboxGroup';
 
-export class FormPrivacyDetails extends Component {
-  continue = e => {
+const FormPrivacyDetails = props => {
+  const proceed = e => {
     e.preventDefault();
-    this.props.nextStep();
+    props.nextStep();
   };
 
-  back = e => {
+  const back = e => {
     e.preventDefault();
-    this.props.prevStep();
+    props.prevStep();
   };
 
-  render() {
-    const { handleChecked, values } = this.props;
+  const { handleChecked, values } = props;
 
-    return (
-      <form onSubmit={this.continue}>
-        <div>
-          <label htmlFor='trayProducts'>
-            Receive updates about Tray.io product by email
-          </label>
-          <input
-            type='checkbox'
-            name='trayProducts'
-            onChange={handleChecked('trayProducts')}
-            checked={values.trayProducts}
-          />
-        </div>
-        <div>
-          <label htmlFor='otherProducts'>
-            Receive communication by email for other products created by the
-            Tray.io team
-          </label>
-          <input
-            type='checkbox'
-            name='otherProducts'
-            onChange={handleChecked('otherProducts')}
-            checked={values.otherProducts}
-          />
-        </div>
-        <div>
-          <button onClick={this.back}>Go Back</button>
-          <button type='submit'>Submit</button>
-        </div>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={proceed}>
+      <CheckboxGroup
+        name='trayProducts'
+        handleChecked={handleChecked}
+        values={values}
+        label='Receive updates about Tray.io product by email'
+      />
+      <CheckboxGroup
+        name='otherProducts'
+        handleChecked={handleChecked}
+        values={values}
+        label='Receive communication by email for other products created by the Tray.io team'
+      />
+      <div>
+        <button onClick={back}>Go Back</button>
+        <button type='submit'>Submit</button>
+      </div>
+    </form>
+  );
+};
 
 export default FormPrivacyDetails;
