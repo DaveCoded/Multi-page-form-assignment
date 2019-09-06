@@ -94,7 +94,7 @@ export class UserForm extends Component {
     return (
       <>
         <h1>Step {step}</h1>
-        {formJsx}
+        <form>{formJsx}</form>
       </>
     );
   }
