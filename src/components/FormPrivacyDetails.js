@@ -15,7 +15,7 @@ export class FormPrivacyDetails extends Component {
     const { handleChecked, values } = this.props;
 
     return (
-      <div>
+      <form onSubmit={this.continue}>
         <div>
           <label htmlFor='trayProducts'>
             Receive updates about Tray.io product by email
@@ -41,9 +41,9 @@ export class FormPrivacyDetails extends Component {
         </div>
         <div>
           <button onClick={this.back}>Go Back</button>
-          <button onClick={this.continue}>Submit</button>
+          <button type='submit'>Submit</button>
         </div>
-      </div>
+      </form>
     );
   }
 }
