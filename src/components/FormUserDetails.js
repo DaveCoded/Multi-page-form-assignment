@@ -43,7 +43,7 @@ export class FormUserDetails extends Component {
       errors.userPassword = 'Please include a lowercase character';
       formIsValid = false;
     } else if (!uppercaseCheck.test(userPassword)) {
-      errors.userPassword = 'Please include an uppercase character';
+      errors.userPassword = 'Please include a capital letter';
       formIsValid = false;
     } else if (!numericalCheck.test(userPassword)) {
       errors.userPassword = 'Please include a numerical character';
@@ -55,7 +55,7 @@ export class FormUserDetails extends Component {
   };
 
   // Proceed to next form page
-  continue = e => {
+  proceed = e => {
     e.preventDefault();
     if (this.validate()) {
       this.props.nextStep();
@@ -67,7 +67,7 @@ export class FormUserDetails extends Component {
     const { errors } = this.state;
 
     return (
-      <form onSubmit={this.continue}>
+      <form className='form user-form' onSubmit={this.proceed} noValidate>
         <TextInputGroup
           type='text'
           name='userName'
@@ -75,6 +75,7 @@ export class FormUserDetails extends Component {
           handleChange={handleChange}
           values={values}
           errors={errors}
+          required
         />
         <TextInputGroup
           type='text'
@@ -90,6 +91,7 @@ export class FormUserDetails extends Component {
           handleChange={handleChange}
           values={values}
           errors={errors}
+          required
         />
         <TextInputGroup
           type='password'
@@ -98,8 +100,29 @@ export class FormUserDetails extends Component {
           handleChange={handleChange}
           values={values}
           errors={errors}
+          required
         />
-        <button type='submit'>Next</button>
+        <p style={{ marginTop: '20px', color: '#787878' }}>
+          Your password must have:
+        </p>
+        <ul
+          style={{
+            width: '100%',
+            margin: '5px 0px 20px 90px',
+            color: '#787878'
+          }}>
+          <div className='left-column'>
+            <li>9 or more characters</li>
+            <li>at least one lowercase letter</li>
+          </div>
+          <div className='right-column'>
+            <li>at least one capital letter</li>
+            <li>at least one number</li>
+          </div>
+        </ul>
+        <button className='btn submit-button' type='submit'>
+          Next
+        </button>
       </form>
     );
   }

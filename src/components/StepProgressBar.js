@@ -4,9 +4,16 @@ const StepProgressBar = ({ step }) => {
   return (
     <div className='container'>
       <ul className='progressbar'>
-        <li className='active'>Your details</li>
-        <li>Privacy</li>
-        <li>Done</li>
+        <li
+          className={step === 1 || step === 2 || step === 3 ? 'active' : null}>
+          <span className='page-title'>User</span>
+        </li>
+        <li className={step === 2 || step === 3 ? 'active' : null}>
+          <span className='page-title'>Privacy</span>
+        </li>
+        <li className={step === 3 ? 'active' : null}>
+          <span className='page-title'>Done</span>
+        </li>
       </ul>
     </div>
   );

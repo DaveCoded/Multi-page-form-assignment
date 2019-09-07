@@ -6,18 +6,23 @@ const TextInputGroup = ({
   label,
   handleChange,
   values,
-  errors
+  errors,
+  required
 }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
+    <div style={{ width: '100%' }}>
+      <label className='input-label' htmlFor={name}>
+        {label}: {required ? <span className='asterisk'>*</span> : null}
+      </label>
       <input
+        className='text-input'
         type={type}
         name={name}
         onChange={handleChange(name)}
         defaultValue={values[name]}
+        noValidate
       />
-      {errors ? <div>{errors[name]}</div> : null}
+      {errors ? <div className='errors'>{errors[name]}</div> : null}
     </div>
   );
 };
