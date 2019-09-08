@@ -1,5 +1,5 @@
 import React from 'react';
-import SVG from './SVG';
+import SVG from '../components/SVG';
 
 const FormDone = ({ values }) => {
   console.log(JSON.stringify(values));

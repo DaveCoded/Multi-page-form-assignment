@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckboxGroup from './CheckboxGroup';
+import CheckboxGroup from '../components/CheckboxGroup';
 
 const FormPrivacyDetails = props => {
   const proceed = e => {

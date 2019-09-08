@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import TextInputGroup from './TextInputGroup';
+import TextInputGroup from '../components/TextInputGroup';
 
 import checkValidName from '../helpers/checkValidName';
 import checkValidEmail from '../helpers/checkValidEmail';
 import checkValidPassword from '../helpers/checkValidPassword';
-import PasswordRequirements from './PasswordRequirements';
+import PasswordRequirements from '../components/PasswordRequirements';
 
 export class FormUserDetails extends Component {
   constructor(props) {

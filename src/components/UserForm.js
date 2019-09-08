@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import StepProgressBar from './StepProgressBar';
-import FormUserDetails from './FormUserDetails';
-import FormPrivacyDetails from './FormPrivacyDetails';
-import FormDone from './FormDone';
+import FormUserDetails from '../pages/FormUserDetails';
+import FormPrivacyDetails from '../pages/FormPrivacyDetails';
+import FormDone from '../pages/FormDone';
 
 export class UserForm extends Component {
   constructor(props) {
