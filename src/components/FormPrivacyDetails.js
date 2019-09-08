@@ -15,7 +15,7 @@ const FormPrivacyDetails = props => {
   const { handleChecked, values } = props;
 
   return (
-    <form className='form privacy-form' onSubmit={proceed}>
+    <form className='form' onSubmit={proceed}>
       <CheckboxGroup
         name='trayProducts'
         handleChecked={handleChecked}
@@ -29,10 +29,10 @@ const FormPrivacyDetails = props => {
         label='Receive communication by email for other products created by the Tray.io team'
       />
       <div className='button-group'>
-        <button className='btn back-button' onClick={back}>
+        <button className='btn btn--back' onClick={back}>
           Go Back
         </button>
-        <button className='btn submit-button' type='submit'>
+        <button className='btn btn--submit' type='submit'>
           Submit
         </button>
       </div>

@@ -83,7 +83,7 @@ export class FormUserDetails extends Component {
           required
         />
         <PasswordRequirements />
-        <button className='btn submit-button' type='submit'>
+        <button className='btn btn--submit' type='submit'>
           Next
         </button>
       </form>

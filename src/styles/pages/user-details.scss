@@ -1,0 +1,17 @@
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+/* ============ PASSWORD REQUIREMENTS ========= */
+.password-paragraph {
+  margin-top: 20px;
+  color: $color-light-grey;
+}
+.password-list {
+  width: 100%;
+  margin: 5px 0px 20px 90px;
+  color: $color-light-grey;
+}

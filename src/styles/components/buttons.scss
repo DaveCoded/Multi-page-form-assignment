@@ -1,0 +1,36 @@
+.btn {
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 21px;
+  padding: 1px 6px 3px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:focus {
+    outline: none;
+    border: $focus-border;
+  }
+
+  &--submit {
+    border: none;
+    background-color: $color-primary;
+    color: white;
+
+    &:hover {
+      background-color: darken($color-primary, 5%);
+    }
+  }
+
+  &--back {
+    border: 2px solid $color-dark-grey;
+    color: $color-dark-grey;
+    background: white;
+
+    &:hover {
+      background-color: $color-dark-grey;
+      color: white;
+    }
+  }
+}

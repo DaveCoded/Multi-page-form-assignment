@@ -6,4 +6,4 @@ const checkValidName = (userName, errors) => {
   return true;
 };
 
-module.exports = checkValidName;
+export default checkValidName;
