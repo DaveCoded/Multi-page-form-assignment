@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import TextInputGroup from './TextInputGroup';
 
+import checkValidName from '../helpers/checkValidName';
+import checkValidEmail from '../helpers/checkValidEmail';
+import checkValidPassword from '../helpers/checkValidPassword';
+
 export class FormUserDetails extends Component {
   constructor(props) {
     super(props);
@@ -10,48 +14,23 @@ export class FormUserDetails extends Component {
   }
 
   validate = () => {
-    let formIsValid = true;
+    const { userName, userEmail, userPassword } = this.props.values;
     const errors = {
       userName: '',
       userEmail: '',
       userPassword: ''
     };
-    const { userName, userEmail, userPassword } = this.props.values;
 
-    // Regex for valid email address
-    const validEmailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+.)+[^<>()[\].,;:\s@"]{2,})$/i;
-    // Separate password checks for separate error messages
-    const lowercaseCheck = /^(?=.*[a-z])/;
-    const uppercaseCheck = /^(?=.*[A-Z])/;
-    const numericalCheck = /^(?=.*[0-9])/;
+    let validName = true;
+    let validEmail = true;
+    let validPassword = true;
 
-    // Name required
-    if (userName.length === 0) {
-      formIsValid = false;
-      errors.userName = 'Please enter your name';
-    }
-    // Email required & valid
-    if (!validEmailRegex.test(userEmail)) {
-      formIsValid = false;
-      errors.userEmail = 'Please enter a valid email address';
-    }
-    // Password required and passes regex tests
-    if (userPassword.length < 9) {
-      formIsValid = false;
-      errors.userPassword = 'Password too short';
-    } else if (!lowercaseCheck.test(userPassword)) {
-      errors.userPassword = 'Please include a lowercase character';
-      formIsValid = false;
-    } else if (!uppercaseCheck.test(userPassword)) {
-      errors.userPassword = 'Please include a capital letter';
-      formIsValid = false;
-    } else if (!numericalCheck.test(userPassword)) {
-      errors.userPassword = 'Please include a numerical character';
-      formIsValid = false;
-    }
+    validName = checkValidName(userName, errors);
+    validEmail = checkValidEmail(userEmail, errors);
+    validPassword = checkValidPassword(userPassword, errors);
 
     this.setState({ errors: errors });
-    return formIsValid;
+    return validName && validEmail && validPassword;
   };
 
   // Proceed to next form page
