@@ -110,6 +110,10 @@ code {
   font-size: 16px;
   background-color: #fafafa;
 }
+.text-input:focus {
+  outline: none;
+  border: 2px solid orange;
+}
 .asterisk {
   color: red;
 }
@@ -136,6 +140,10 @@ input[type='checkbox'] + label {
   font-family: inherit;
   cursor: pointer;
   transition: all 0.3s;
+}
+.btn:focus {
+  outline: none;
+  border: 2px solid orange;
 }
 .submit-button {
   border: none;
@@ -172,6 +180,17 @@ input[type='checkbox'] + label {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
+}
+
+/* ============ PASSWORD REQUIREMENTS ========= */
+.password-paragraph {
+  margin-top: 20px;
+  color: #787878;
+}
+.password-list {
+  width: 100%;
+  margin: 5px 0px 20px 90px;
+  color: #787878;
 }
 
 /* ================ DONE PAGE ================= */
