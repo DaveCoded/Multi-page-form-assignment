@@ -3,6 +3,18 @@
   margin: 0 auto;
 }
 
+@media (max-width: $breakpoint-tablet) {
+  .form {
+    width: $form-width-tablet;
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .form {
+    width: $form-width-phone;
+  }
+}
+
 .user-form {
   display: flex;
   flex-direction: column;

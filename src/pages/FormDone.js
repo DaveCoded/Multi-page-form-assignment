@@ -21,8 +21,7 @@ const FormDone = ({ values }) => {
         </a>
       </div>
       <p className='verify'>
-        Please verify your email address, you should
-        <br />
+        Please verify your email address, you should <br />
         have received an email from us already!
       </p>
     </div>

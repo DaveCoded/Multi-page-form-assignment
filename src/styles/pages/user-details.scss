@@ -10,8 +10,30 @@
   margin-top: 20px;
   color: $color-light-grey;
 }
+
+@media (max-width: $breakpoint-tablet) {
+  .password-paragraph {
+    margin-bottom: 10px;
+  }
+}
+
 .password-list {
   width: 100%;
   margin: 5px 0px 20px 90px;
   color: $color-light-grey;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .password-list {
+    margin: 5px 0px 20px 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: $breakpoint-phone) {
+  .password-list {
+    width: 310px;
+    margin: 0 0 20px 35px;
+    font-size: 13px;
+  }
 }

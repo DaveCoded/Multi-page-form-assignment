@@ -11,6 +11,21 @@
   }
 }
 
+@media (max-width: $breakpoint-phone) {
+  .done-container {
+    width: 360px;
+
+    br {
+      display: none;
+    }
+
+    .verify {
+      font-size: 16px;
+      padding: 0 22px;
+    }
+  }
+}
+
 svg {
   width: 100px;
   fill: $svg-blue;
