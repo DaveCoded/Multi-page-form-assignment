@@ -10,6 +10,7 @@ export class UserForm extends Component {
     super(props);
     this.state = {
       step: 1,
+      // User data to collect
       userName: '',
       userRole: '',
       userEmail: '',

@@ -22,6 +22,7 @@ const TextInputGroup = ({
         defaultValue={values[name]}
         noValidate
       />
+      {/* If an error exists in state, display relevant error below input */}
       {errors ? <div className='errors'>{errors[name]}</div> : null}
     </div>
   );

@@ -18,22 +18,22 @@ const checkValidPassword = password => {
 
 describe('Validate password input', () => {
   test('should return true', () => {
-    expect(checkValidPassword('GaryKasparov1991')).toBe(true);
+    expect(checkValidPassword('GaryK1991')).toBe(true);
   });
 
-  test('should return false', () => {
+  test('should recognise an 8 character password is too short', () => {
+    expect(checkValidPassword('Gary1991')).toBe('too short');
+  });
+
+  test('should require a number in the password', () => {
     expect(checkValidPassword('GaryKasparov')).toBe('no number');
   });
 
-  test('should return false', () => {
+  test('should require an uppercase character', () => {
     expect(checkValidPassword('garykasparov1991')).toBe('no uppercase letter');
   });
 
-  test('should return false', () => {
+  test('should require a lowercase character', () => {
     expect(checkValidPassword('GARYKASPAROV1991')).toBe('no lowercase letter');
-  });
-
-  test('should return false', () => {
-    expect(checkValidPassword('g1991')).toBe('too short');
   });
 });

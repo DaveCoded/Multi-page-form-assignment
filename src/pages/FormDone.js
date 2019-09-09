@@ -3,6 +3,7 @@ import SVG from '../components/SVG';
 
 const FormDone = ({ values }) => {
   console.log(JSON.stringify(values));
+
   return (
     <div className='done-container'>
       <h1>Success!</h1>

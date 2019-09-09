@@ -5,6 +5,7 @@ const StepProgressBar = ({ step }) => {
     <div className='container'>
       <ul className='progressbar'>
         <li
+          // Conditionally set active class according to current step/page
           className={step === 1 || step === 2 || step === 3 ? 'active' : null}>
           <span className='page-title'>User</span>
         </li>

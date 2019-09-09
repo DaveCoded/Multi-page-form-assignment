@@ -16,6 +16,7 @@ export class FormUserDetails extends Component {
 
   validate = () => {
     const { userName, userEmail, userPassword } = this.props.values;
+    // Errors to be set in state
     const errors = {
       userName: '',
       userEmail: '',
@@ -26,15 +27,17 @@ export class FormUserDetails extends Component {
     let validEmail = true;
     let validPassword = true;
 
+    // Errors set in these helper functions
     validName = checkValidName(userName, errors);
     validEmail = checkValidEmail(userEmail, errors);
     validPassword = checkValidPassword(userPassword, errors);
 
     this.setState({ errors: errors });
+
     return validName && validEmail && validPassword;
   };
 
-  // Proceed to next form page
+  // Proceed to next form page if validate() returns true
   proceed = e => {
     e.preventDefault();
     if (this.validate()) {

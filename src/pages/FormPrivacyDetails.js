@@ -2,11 +2,13 @@ import React from 'react';
 import CheckboxGroup from '../components/CheckboxGroup';
 
 const FormPrivacyDetails = props => {
+  // Move to next page of form
   const proceed = e => {
     e.preventDefault();
     props.nextStep();
   };
 
+  // Move to previous page of form
   const back = e => {
     e.preventDefault();
     props.prevStep();
