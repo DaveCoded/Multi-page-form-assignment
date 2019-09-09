@@ -34,6 +34,23 @@ how many components need to share state. I know you use the latter, but
 unfortunately, I don't yet know Redux well enough to have introduced it in
 good time. Otherwise I would have, just to show off.
 
+## A note on UX for form validation
+
+At first, I ran a vidation function in the component's render method, so that
+the user would get instant feedback about whether thier input was valid. The
+problem with this was that the error message would be displayed after the
+very first keystroke. To rectify this, I used the inputs' onBlur attribute to
+fire the validation function; now the error message only showed after the user
+moved on or unfocused the input. If you have the stomach for it, you can see
+the code in my third commit, named "onBlur validation". Please forgive the
+unwieldy validate() method if you do.
+
+I then read your spec more closely; it says to "Validate the input fields upon
+submission of each page". I've changed the project to do so, but I think that
+a better solution is to combine the two, so that after a first go at submission,
+the inputs are validated on each keystroke, so that the reader gets real-time
+feedback as to whether their changes are valid or not. 
+
 ## Testing
 
 This is my first time trying to write tests and I didn't have time to learn
