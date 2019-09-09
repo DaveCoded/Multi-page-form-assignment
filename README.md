@@ -7,7 +7,7 @@ should be fairly simple. Just clone the repository, run:
 
 ### `npm install`
 
-and then in the project directory, you can run:
+and then you can run:
 
 ### `npm start`
 
