@@ -41,7 +41,7 @@ enough to use them effectively. Turns out it's an even larger topic than I'd
 been aware of. As a result, the two unit tests included are just tokens of my
 learning so far. I'll be diving into the subject further this week, looking at
 Enzyme and react-test-renderer, and hopefully combining them with Jest to see
-if I can write integration tests, end to end tets, and figure out what use
+if I can write integration tests, end-to-end tests, and figure out what use
 snapshot tests are.
 
 If you have any advice on how to best go about picking up TDD, I'd appreciate
